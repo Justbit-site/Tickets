@@ -46,7 +46,9 @@ gem 'rails-assets-tether', '~> 1.1'
 # Add jQuery
 gem 'jquery-rails', '~> 4.1'
 # Bootstrap sass
-gem 'bootstrap', '~> 4.0.0.alpha6'
+#gem 'bootstrap', '~> 4.0.0.alpha6'
+# Flat ui
+gem 'flat-ui-sass'
 # Sass material colors
 gem 'sass-material-colors'
 

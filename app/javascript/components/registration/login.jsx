@@ -37,7 +37,7 @@ export class Login extends Base {
         <Formsy.Form onValid={()=> this.enableSubmitBtn()}
                       onInvalid={()=> this.disableSubmitBtn()}
                       onValidSubmit={()=> this.submit()}>
-            <div>{this.state.error}</div>       
+            <div>{this.state.error}</div>
             <div>
               <FormsyText
                 onChange={(e)=> {this.syncField(e, "email");}}
