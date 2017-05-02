@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   authenticated :user do
     root 'main#dashboard', as: :authenticated_root
   end
+
   root 'main#home'
+
+  resources :posts
 end

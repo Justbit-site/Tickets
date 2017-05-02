@@ -1,6 +1,8 @@
 {
   "application.js": "http://localhost:8080/application.js",
   "application.js.map": "http://localhost:8080/application.js.map",
+  "post_group.js": "http://localhost:8080/post_group.js",
+  "post_group.js.map": "http://localhost:8080/post_group.js.map",
   "registration.js": "http://localhost:8080/registration.js",
   "registration.js.map": "http://localhost:8080/registration.js.map"
 }
