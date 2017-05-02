@@ -33,10 +33,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Devise for authentication
 gem 'devise', '~> 4.0'
+# Auth with facebook
+gem 'omniauth-facebook'
 # Webpacker-React
 gem 'webpacker-react', "~> 0.2.0"
 # HAML for views
 gem 'haml-rails'
+# Add meta tags
+gem 'meta-tags-helpers', '~> 0.2.0'
 
 ## Front-end libs
 # Auto prefixer css

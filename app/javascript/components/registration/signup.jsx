@@ -89,6 +89,7 @@ export class SignUp extends Base {
                 label="Crear Cuenta"/>
               <a href="#" onClick={this.props.toggle} style={styles.leftSpace}>Ya tengo cuenta</a>
             </div>
+            <a href="/users/auth/facebook">Crear cuenta usando Facebook</a>
         </Formsy.Form>
       </MuiThemeProvider>
     );

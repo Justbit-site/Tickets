@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 20170410073840) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "name"
+    t.string "company"
+    t.string "position"
+    t.string "level", default: "0", null: false
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

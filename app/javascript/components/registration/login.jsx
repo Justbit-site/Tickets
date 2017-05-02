@@ -69,6 +69,9 @@ export class Login extends Base {
                 label="Iniciar seción"/>
               <a href="#" onClick={this.props.toggle} style={styles.leftSpace}>Crear cuenta</a>
             </div>
+            <div>
+              <a href="/users/auth/facebook">Iniciar sesión usando Facebook</a>
+            </div>
         </Formsy.Form>
       </MuiThemeProvider>
     );
