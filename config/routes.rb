@@ -15,4 +15,11 @@ Rails.application.routes.draw do
   root 'main#home'
 
   resources :posts
+
+  #==================== Api =====================#
+  use_doorkeeper
+
+  namespace :api, defaults: { format: "json" }do
+    resources :posts, controller: :posts, only: [:index]
+  end
 end

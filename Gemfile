@@ -44,7 +44,7 @@ gem 'haml-rails'
 # Add meta tags
 gem 'meta-tags-helpers', '~> 0.2.0'
 
-## Front-end libs
+#======== Front-end libs ========#
 # Auto prefixer css
 gem 'autoprefixer-rails'
 # Efficiently making an absolutely positioned element stay next to another element on the page.
@@ -58,7 +58,11 @@ gem 'flat-ui-sass'
 # Sass material colors
 gem 'sass-material-colors'
 
-
+#======== Api ========#
+# Oauth 2.0
+gem 'doorkeeper'
+# Devise and doorkeeper
+gem 'devise-doorkeeper'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
