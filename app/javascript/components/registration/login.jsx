@@ -29,6 +29,7 @@ export class Login extends Base {
   handleError(err){
     const errorMessage = JSON.parse(err.response).error;
     this.state.error = errorMessage;
+    this.state.isAlert = true;
   }
 
   render(){
@@ -37,7 +38,7 @@ export class Login extends Base {
         <Formsy.Form onValid={()=> this.enableSubmitBtn()}
                       onInvalid={()=> this.disableSubmitBtn()}
                       onValidSubmit={()=> this.submit()}>
-            <div>{this.state.error}</div>
+            <div className={(this.state.isAlert ? 'alert alert-danger' : '')}>{this.state.error}</div>
             <div>
               <FormsyText
                 onChange={(e)=> {this.syncField(e, "email");}}
@@ -68,9 +69,6 @@ export class Login extends Base {
                 type="submit"
                 label="Iniciar seción"/>
               <a href="#" onClick={this.props.toggle} style={styles.leftSpace}>Crear cuenta</a>
-            </div>
-            <div>
-              <a href="/users/auth/facebook">Iniciar sesión usando Facebook</a>
             </div>
         </Formsy.Form>
       </MuiThemeProvider>

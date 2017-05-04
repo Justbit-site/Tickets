@@ -13,7 +13,8 @@ export class Base extends React.Component {
       email: '',
       password: '',
       passwordConfirmation: '',
-      error: ''
+      error: '',
+      isAlert: false
     };
   }
 

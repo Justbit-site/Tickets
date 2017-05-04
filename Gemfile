@@ -57,6 +57,8 @@ gem 'jquery-rails', '~> 4.1'
 gem 'flat-ui-sass'
 # Sass material colors
 gem 'sass-material-colors'
+# Flexbox
+gem 'flexbox-rails'
 
 #======== Api ========#
 # Oauth 2.0
