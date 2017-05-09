@@ -69,7 +69,11 @@ gem 'devise-doorkeeper'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#======== Groups ========#
 group :development, :test do
+  gem 'shoulda-matchers'
+  gem 'rspec-rails', '~> 3.5.0'
+  gem 'factory_girl_rails', '~> 4.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver

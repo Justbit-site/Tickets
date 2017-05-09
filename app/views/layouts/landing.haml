@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title JustbitSocial
+    = csrf_meta_tags
+    = meta_tags(  :title => "Justbit tickets", :description => "Para todos nuestros clientes", :og => {:type => "website"}, :ns => {:my_custom_meta => "tickets, clients"} )
+    = stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'registration'
+    = javascript_pack_tag 'post_group'
+
+  %body
+    - if user_signed_in?
+      = render "partials/navigation"
+
+    = flash_messages
+
+    = yield
