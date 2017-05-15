@@ -1,10 +1,10 @@
-import React from 'react';
-import WebpackerReact  from 'webpacker-react';
-import { Post } from '../components/posts/post';
-import { Posts } from '../components/posts/posts';
+import React, {Component} from 'react';
 import reqwest from 'reqwest';
+import { Post } from './posts/post';
+import { Posts } from './posts/posts';
+import { PostForm } from './posts/post_form';
 
-export class PostGroup extends React.Component {
+export default class PostMain extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -29,12 +29,11 @@ export class PostGroup extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="container">
+        <PostForm></PostForm>
         <Posts posts={ this.state.posts }>
         </Posts>
       </div>
     );
   }
 }
-
-WebpackerReact.setup({PostGroup});

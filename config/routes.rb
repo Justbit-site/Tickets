@@ -5,14 +5,18 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'authentication/omniauth_callbacks'
   }
 
+  devise_scope :user do
+   post '/signout', to: 'devise/sessions#destroy', as: :signout
+  end
+
   post '/custom_sign_up', to: 'authentication/omniauth_callbacks#custom_sign_up'
 
   # If user is login
   authenticated :user do
-    root 'main#dashboard', as: :authenticated_root
+    root 'main#index', as: :authenticated_root
   end
 
-  root 'main#home'
+  root 'main#login'
 
   resources :posts
 

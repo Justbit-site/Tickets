@@ -1,13 +1,13 @@
 class MainController < ApplicationController
-  def home
+  def login
   end
 
-  def dashboard
+  def index
   end
 
   protected
     def set_layout
-      return "landing" if user_signed_in?
+      return "application" if user_signed_in?
       super
     end
 end

@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
 
   protected
     def set_layout
-      "application"
+      "registration"
     end
 end

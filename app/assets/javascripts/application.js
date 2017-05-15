@@ -18,3 +18,12 @@
 //= require bootstrap
 //= require flat-ui
 //= require_tree .
+
+
+document.addEventListener('turbolinks:request-start', function(){
+  $('.main').fadeOut();
+});
+
+document.addEventListener('turbolinks:render', function(){
+  $('.main').fadeIn();
+});
