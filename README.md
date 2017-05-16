@@ -5,17 +5,19 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version : 2.4.1
 
-* System dependencies
+* Rails version : 5.1.0
 
-* Configuration
+* System dependencies: bundle install
 
-* Database creation
+* Configuration: nothing now 
 
-* Database initialization
+* Database creation: rails db:migrate
 
-* How to run the test suite
+* Database initialization: rails db:migrate
+
+* How to run the test suite: in development 
 
 * Services (job queues, cache servers, search engines, etc.)
 
