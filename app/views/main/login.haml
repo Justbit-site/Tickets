@@ -1,0 +1,19 @@
+.full-height-vh.row.middle-xs.white-text.center-xs.login-bg.no-margin
+  .col-xs-10.col-sm-8.col-md-6.col-lg-4
+    .big-padding.blue-bg.while-text
+      %h1.no-margin.bold.light-blue-text.no-margin Justbit tickets
+      %p.no-margin Para todos nuestros clientes
+      .login-area
+        =react_component("Registration");
+      .large-padding.text-center.top-space
+        =link_to "Iniciar sesión usando Facebook", user_facebook_omniauth_authorize_path
+
+-#.full-page-height-vh.bg-color-purple-100.row.middle-xs.center-xs.color-white
+  .col-xs-8.col-md-5.text-left
+    %h1 Justbit tickets
+    %p Para todos nuestros clientes
+    .card.bg-color-white.padding.text-center
+      =react_component("Registration");
+
+:css
+  html, body {overflow: hidden;}

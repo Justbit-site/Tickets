@@ -1,10 +1,10 @@
 import React from 'react';
 import Formsy from 'formsy-react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FormsyText from 'formsy-material-ui/lib/FormsyText';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Base, styles } from './base';
 import reqwest from 'reqwest';
+import { Base, styles } from './base';
 
 export class Login extends Base {
   submit(){
@@ -29,6 +29,7 @@ export class Login extends Base {
   handleError(err){
     const errorMessage = JSON.parse(err.response).error;
     this.state.error = errorMessage;
+    this.state.isAlert = true;
   }
 
   render(){
@@ -37,7 +38,7 @@ export class Login extends Base {
         <Formsy.Form onValid={()=> this.enableSubmitBtn()}
                       onInvalid={()=> this.disableSubmitBtn()}
                       onValidSubmit={()=> this.submit()}>
-            <div>{this.state.error}</div>       
+            <div className={(this.state.isAlert ? 'alert alert-danger' : '')}>{this.state.error}</div>
             <div>
               <FormsyText
                 onChange={(e)=> {this.syncField(e, "email");}}

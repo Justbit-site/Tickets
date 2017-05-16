@@ -1,0 +1,14 @@
+// Remove basic styles chrome
+// Remove background yellow inputs to autocomplte
+// sass-lint:disable-all
+@-webkit-keyframes autofill
+  to
+    color: map-get($colors, 'dark-grey')
+    background: transparent
+
+
+input:-webkit-autofill
+  -webkit-animation-name: autofill
+  -webkit-animation-fill-mode: both
+
+// sass-lint:enable-all

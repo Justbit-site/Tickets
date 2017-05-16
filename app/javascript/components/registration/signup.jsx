@@ -8,23 +8,30 @@ import reqwest from 'reqwest';
 
 export class SignUp extends Base {
   submit(){
-    reqwest({
-      url: '/users.json',
-      method: 'post',
-      data: {
-        user: {
-          email: this.state.email,
-          password: this.state.password,
-          passwordConfirmation: this.state.passwordConfirmation
+    if (this.state.password == this.state.passwordConfirmation){
+      reqwest({
+        url: '/users.json',
+        method: 'post',
+        data: {
+          user: {
+            email: this.state.email,
+            password: this.state.password,
+            passwordConfirmation: this.state.passwordConfirmation
+          }
+        },
+        headers: {
+          'X-CSRF-Token': window.JustbitSocial.token
         }
-      },
-      headers: {
-        'X-CSRF-Token': window.JustbitSocial.token
-      }
-    }).then((data) => {
-      console.log(data);
-      this.reload();
-    }).catch((err) => this.handleError(err));
+      }).then((data) => {
+        console.log(data);
+        this.reload();
+      }).catch((err) => this.handleError(err));
+    }else{
+      this.setState({
+        error: 'Las contraseñas no coinsiden, intente de nuevo',
+        isAlert: true
+      });
+    }
   }
 
   handleError(err){
@@ -37,7 +44,8 @@ export class SignUp extends Base {
     }
 
     this.setState({
-      error:errorsResponse
+      error: errorsResponse,
+      isAlert: true
     });
   }
 
@@ -47,7 +55,7 @@ export class SignUp extends Base {
         <Formsy.Form onValid={()=> this.enableSubmitBtn()}
                       onInvalid={()=> this.disableSubmitBtn()}
                       onValidSubmit={()=> this.submit()}>
-           <div>{this.state.error}</div>
+           <div className={(this.state.isAlert ? 'alert alert-danger' : '')}>{this.state.error}</div>
             <div>
               <FormsyText
                 onChange={(e)=> {this.syncField(e, "email");}}

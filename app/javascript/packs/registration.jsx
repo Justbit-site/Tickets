@@ -1,12 +1,14 @@
-import React from  'react';
+// React
+import React, {Component} from 'react';
+// Webpacker
 import WebpackerReact  from 'webpacker-react';
+// components
 import { Login } from '../components/registration/login';
 import { SignUp } from '../components/registration/signup';
+// Material-ui Outbuildings
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-injectTapEventPlugin();
-
-export class Registration extends React.Component {
+class Registration extends Component {
   constructor(props){
     super(props);
 
@@ -32,4 +34,5 @@ export class Registration extends React.Component {
   }
 }
 
+injectTapEventPlugin();
 WebpackerReact.setup({Registration});

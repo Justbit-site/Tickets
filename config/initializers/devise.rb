@@ -1,18 +1,19 @@
-# Use this hook to configure devise mailer, warden hooks and so forth.
-# Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # Doorkeeper
+  Devise::Doorkeeper.configure_devise(config)
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '0eb2c248f6b6913f1bf86bd697d786aa377b9393b9e6579044f37d1c406c24b9c1337f22ceab32274a9202b780bdbccb57b76738f8a391a73adb5e61a7c19779'
+  config.secret_key = '0eb2c248f6b6913f1bf86bd697d786aa377b9393b9e6579044f37d1c406c24b9c1337f22ceab32274a9202b780bdbccb57b76738f8a391a73adb5e61a7c19779'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'hi@justbit.site'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -251,6 +252,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  # ==> Facebook
+  config.omniauth :facebook, '1906946086185323', '7ef335b27d0e1ac5baacc5738cf9da6a'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
